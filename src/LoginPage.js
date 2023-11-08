@@ -1,38 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from './UserContext';
-import './GlobalStyles.css';
-import './LoginPage.css';
+import { useUser } from "./UserContext";
+import "./GlobalStyles.css";
+import "./LoginPage.css";
 
 function LoginPage() {
-    const { user } = useUser(); // 사용자 정보 읽어옴
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
-    const navigate = useNavigate();
+  const { user } = useUser(); // 사용자 정보 읽어옴
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
-    const goToPost = () => {
-        navigate("/postlist");
+  const goToPost = () => {
+    navigate("/postlist");
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
     }
-
-    const handleKeyPress = (e) => {
-      if (e.key === 'Enter') {
-        handleLogin();
-      }
-    };
+  };
 
   const handleLogin = async () => {
     try {
-        if (user && user.email === email && user.password === password) {
-            setLoggedIn(true);
-            goToPost();
-        }
-        else
-            alert('로그인 실패');
-    } catch(error) {
-        console.error('로그인 실패', error);
+      if (user && user.email === email && user.password === password) {
+        setLoggedIn(true);
+        goToPost();
+      } else alert("로그인 실패");
+    } catch (error) {
+      console.error("로그인 실패", error);
     }
-};
+  };
 
   return (
     <div className="login-page">

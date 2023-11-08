@@ -1,6 +1,13 @@
+import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function MyMapComponent() {
+  const navigate = useNavigate();
+
+  const goToPost = () => {
+    navigate("/postlist");
+  };
   const newScript = (src) => {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -87,6 +94,7 @@ function MyMapComponent() {
         className="map"
         style={{ width: "100%", height: "300px", margin: "auto" }}
       ></div>
+      <button onClick={goToPost}>게시물 보기</button>
     </div>
   );
 }

@@ -1,0 +1,74 @@
+<!-- accounts/templates/accounts/login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .login-container {
+            margin: auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            background-color: #fff;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            background: #fafafa;
+            border: 1px solid #dbdbdb;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+        .login-container button {
+            width: 100%;
+            background-color: #3897f0;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #3079ed;
+        }
+        .logo {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-family: 'Cookie', cursive;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">Instagram</div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="전화번호, 사용자 이름 또는 이메일">
+        <input type="password" name="password" placeholder="비밀번호">
+        <button type="submit">로그인</button>
+    </form>
+    <div>
+        <span>또는</span>
+    </div>
+    <div>
+        <button>회원가입</button>
+    </div>
+    <a href="#">비밀번호를 잊으셨나요?</a>
+</div>
+
+</body>
+</html>

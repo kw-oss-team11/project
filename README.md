@@ -16,7 +16,7 @@
 - Metric Learning을 활용한 Reverse Pill Image Search
 - streamlit 실행 예시
 
-![프로젝트 시연.gif](https://github.com/boostcampaitech3/final-project-level3-cv-16/blob/develop/src/streamlit%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB.gif)
+![프로젝트 시연.gif](링크는 지워두기)
 
 ### 😎 Members
 
@@ -54,13 +54,13 @@
 
 ## 🗺 Service Architecture
 
-![Service Architecture](https://github.com/boostcampaitech3/final-project-level3-cv-16/blob/develop/src/Service%20Architecture.png)
+![Service Architecture](링크는 지워두기)
 
 ## 💾 Datasets
 
-- 의약품 안전나라 데이터 ([Link](https://nedrug.mfds.go.kr/pbp/CCBGA01/getItem?totalPages=4&limit=10&page=2&&openDataInfoSeq=11))
-- ePillID Benchmark ([Link](https://github.com/usuyama/ePillID-benchmark))
-- 기타 이미지 데이터 ([Link](https://unsplash.com/s/photos/pill))
+- 의약품 안전나라 데이터 ([Link](링크는 지워두기)
+- ePillID Benchmark ([Link](링크는 지워두기)
+- 기타 이미지 데이터 ([Link](링크는 지워두기)
     - Classification 및 Object Detection을 위해 직접 촬영 및 수집한, 라이센스가 없는 이미지들
 
 ## 💻 **Development Environment**
@@ -114,13 +114,13 @@ final-project-level3-cv-16
 
 ## 🚀 How to Start
 
-1. Image Classification: [Link](https://github.com/boostcampaitech3/final-project-level3-cv-16/tree/main/image_classification#readme)
+1. Image Classification: [Link](링크는 지워두기)
     
-2. OCR: [Link](https://github.com/boostcampaitech3/final-project-level3-cv-16/blob/develop/README.md)
+2. OCR: [Link](링크는 지워두기)
     
-3. Object Detection (yolov5): [Link](https://github.com/boostcampaitech3/final-project-level3-cv-16/blob/main/src/Object_detection_README.md)
+3. Object Detection (yolov5): [Link](링크는 지워두기)
 
-4. Metric learning: [Link](https://github.com/boostcampaitech3/final-project-level3-cv-16/blob/main/src/Metric_learning_README.md)
+4. Metric learning: [Link](링크는 지워두기)
 
 ## 🔎 Future Research
 
@@ -131,16 +131,10 @@ final-project-level3-cv-16
 
 ## 📎 Appendix
 
-📄 [Experiments & Submission Report](https://www.notion.so/W18-21-Product-Serving-Project-Team-Medic-c09ea15ac67948d08fe4460194f773a8)
+📄 [Experiments & Submission Report](링크는 지워두기)
 
 ## 📜 Reference
 
-- ePillID Dataset: A Low-Shot Fine-Grained Benchmark for Pill Identification ([Link](https://arxiv.org/pdf/2005.14288.pdf))
-- YOLACT: Real-time Instance Segmentation ([Link](https://arxiv.org/abs/1904.02689))
-- How to make deep-text-recognition-benchmark model to recognize both Korean and English ([Link](https://ropiens.tistory.com/35))
-- OCR Model ([Link](https://github.com/clovaai/deep-text-recognition-benchmark))
-- Jaccard Similarity ([Link](https://newscatcherapi.com/blog/ultimate-guide-to-text-similarity-with-python))
-- Text-Recognition Model ([Link](https://github.com/clovaai/CRAFT-pytorch))
-- Background-Removal program ([Link](https://github.com/brilam/remove-bg))
-- Object Detection model YOLOv5 ([Link](https://github.com/ultralytics/yolov5))
-- timm ([Link](https://github.com/rwightman/pytorch-image-models))
+- ePillID Dataset: A Low-Shot Fine-Grained Benchmark for Pill Identification ([Link]링크는 지워두기)
+- YOLACT: Real-time Instance Segmentation ([Link]링크는 지워두기)
+

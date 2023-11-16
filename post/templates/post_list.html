@@ -1,0 +1,27 @@
+<!-- your_app/templates/your_app/post_list.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구매대행 웹사이트</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'post/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>게시물 목록</h1>
+      <ul>
+        {% for post in posts %}
+        <li class="post">
+          <h2>{{ post.title }}</h2>
+          <p>원하는 상품: {{ post.item }}</p>
+          <p>내용: {{ post.content }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="add-post-link" href="{% url 'add_post' %}">게시물 추가</a>
+    </div>
+  </body>
+</html>

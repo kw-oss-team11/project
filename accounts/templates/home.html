@@ -1,0 +1,96 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        /* 지도를 표시할 div의 스타일을 설정합니다. */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome Home!</h1>
+
+<!-- 지도를 표시할 div 요소 -->
+<div id="map"></div>
+
+<!-- Google Maps JavaScript API 로드 -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCXL8SSd3vNXe_kn-LW9mKIFFIjfMC1KQ&callback=initMap">
+</script>
+
+<script>
+    // Google 지도 초기화 함수
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: { lat: 37.62, lng: 127.0582 }, // 기본 중심 위치 (San Francisco)
+            zoom: 17
+        });
+        // 현재 위치 표시를 위한 마커
+        var myLocationMarker = new google.maps.Marker({
+            map: map,
+            title: '내 위치',
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        });
+        // Geolocation API를 이용하여 현재 위치를 가져옵니다.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var myLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                myLocationMarker.setPosition(myLocation);
+                map.setCenter(myLocation);
+            });
+        }
+        // 편의점 위치 정보
+        var convenienceStores = [
+            { name: 'GS25', location: { lat: 37.6198, lng: 127.058 }, url:'/gs25', icon:'/static/GS25.jpeg' },
+            { name: '세븐일레븐', location: { lat: 37.62, lng: 127.0586 }, url:'/seven', icon:'/static/SEVEN.jpeg' },
+            { name: 'CU', location: { lat: 37.6208, lng: 127.0571 }, url:'/cu', icon:'/static/CU.png' },
+            // { name: 'GS25', location: { lat: 37.6194, lng: 127.0574 } }
+            // 추가적인 편의점 정보를 필요에 따라 계속해서 추가
+    ]
+    convenienceStores.forEach(function(store) {
+        var marker = new google.maps.Marker({
+            map: map,
+            position: store.location,
+            title: store.name,
+            icon : {
+                url: store.icon,
+                // This size is for the marker's clickable area. You can set it to any value.
+        size: new google.maps.Size(40, 40),
+        // The point on the image to align with the marker's location.
+        origin: new google.maps.Point(0, 0),
+        // The point on the image that will be placed at the marker's location.
+        anchor: new google.maps.Point(20, 20),
+        // This size is used to scale the image
+        scaledSize: new google.maps.Size(40, 40)  // The size you want the image to display
+            }
+        });
+
+        // 마커 클릭 시 해당 편의점 URL로 이동
+        marker.addListener('click', function() {
+            window.location.href = store.url;
+        });
+    });
+
+    }
+</script>
+<!-- 'Hello' 페이지로 이동하는 버튼 -->
+<a href="{% url 'accounts:display_csv' %}">
+    <button>Display</button>
+</a>
+<!-- 'Chat' 페이지로 이동하는 버튼 추가 -->
+<a href="{% url 'chat:room_list' %}">
+    <button>Chat</button>
+</a>
+
+</body>
+</html>

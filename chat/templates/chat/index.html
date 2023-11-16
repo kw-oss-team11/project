@@ -1,0 +1,20 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Create Chat Room</title>
+</head>
+<body>
+
+<h1>Create a New Chat Room</h1>
+
+<form method="post" action="{% url 'chat:create_room' %}">
+    {% csrf_token %}
+    <input type="text" name="room_name" required>
+    <button type="submit">Create Room</button>
+</form>
+
+</body>
+</html>
+

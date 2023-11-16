@@ -1,0 +1,69 @@
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+</head>
+<body>
+    <textarea id="chat-log" cols="80" rows="20"></textarea><br>
+    <input id="chat-message-input" type="text" size="80"><br>
+    <input id="chat-message-submit" type="button" value="Send">
+    <button id="end-chat">채팅 종료</button>
+    <button id="confirm-meeting">모임 성사</button>
+
+    {{ request.user.id|json_script:"user-id" }}
+    {{ room_name|json_script:"room-name" }}
+
+    <script>
+        const userId = JSON.parse(document.getElementById('user-id').textContent);
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.username + ': ' + data.message + '\n');
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value; // 사용자 ID 제거
+            chatSocket.send(JSON.stringify({'message': message}));
+            messageInputDom.value = '';
+        };
+
+        // 채팅 종료 및 모임 성사 버튼 이벤트
+        document.querySelector('#end-chat').onclick = function() {
+            window.location.href = '{% url "chat:room_list" %}';
+        };
+
+        document.querySelector('#confirm-meeting').onclick = function() {
+            // AJAX 요청으로 채팅방 삭제
+			    fetch('/accounts/chat/delete_room/' +roomName +'/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '{% url "chat:room_list" %}';
+                } else {
+                    alert('Error: Could not delete room');
+                }
+            });
+        };
+    </script>
+</body>
+</html>
+

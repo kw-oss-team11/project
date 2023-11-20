@@ -1,23 +1,70 @@
-<!-- templates/home.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Home</title>
     <style>
-        /* 지도를 표시할 div의 스타일을 설정합니다. */
+        /* 전체 페이지 스타일링 */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* 상단 바 스타일링 */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* 지도 컨테이너 스타일링 */
+        #map-container {
+            display: flex;
+        }
+
+        /* 지도 스타일링 */
         #map {
             height: 400px;
-            width: 100%;
+            width: 70%;
+            margin: 20px;
+            border: 1px solid #ccc;
         }
+
+        /* 버튼 컨테이너 스타일링 */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 20px;
+        }
+
+        /* 각 버튼 스타일링 */
+        .buttons-container button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 150px;
+        }
+
     </style>
 </head>
 <body>
 
-<h1>Welcome Home!</h1>
+<div class="top-bar">
+    <h1>Welcome Home!</h1>
+    <h2>{{ user.username }}</h2>
+</div>
 
-<!-- 지도를 표시할 div 요소 -->
-<div id="map"></div>
+<div id="map-container">
+    <div id="map">Google Map</div>
+    <div class="buttons-container">
+        <a href="{% url 'chat:room_list' %}">
+            <button>Chat</button>
+        </a>
+        <button onclick="window.location.href='/hello.html'">Hello</button>
+        <button onclick="window.location.href='/bye.html'">Bye</button>
+    </div>
+</div>
+
 
 <!-- Google Maps JavaScript API 로드 -->
 <script async defer
@@ -54,7 +101,7 @@
             { name: 'GS25', location: { lat: 37.6198, lng: 127.058 }, url:'/gs25', icon:'/static/GS25.jpeg' },
             { name: '세븐일레븐', location: { lat: 37.62, lng: 127.0586 }, url:'/seven', icon:'/static/SEVEN.jpeg' },
             { name: 'CU', location: { lat: 37.6208, lng: 127.0571 }, url:'/cu', icon:'/static/CU.png' },
-            // { name: 'GS25', location: { lat: 37.6194, lng: 127.0574 } }
+            { name: 'GS25', location: { lat: 37.6194, lng: 127.0574 }, url:'/gs25', icon:'/static/GS25.jpeg' }
             // 추가적인 편의점 정보를 필요에 따라 계속해서 추가
     ]
     convenienceStores.forEach(function(store) {
@@ -83,14 +130,6 @@
 
     }
 </script>
-<!-- 'Hello' 페이지로 이동하는 버튼 -->
-<a href="{% url 'accounts:display_csv' %}">
-    <button>Display</button>
-</a>
-<!-- 'Chat' 페이지로 이동하는 버튼 추가 -->
-<a href="{% url 'chat:room_list' %}">
-    <button>Chat</button>
-</a>
 
 </body>
 </html>

@@ -28,10 +28,3 @@ def signup_view(request):
         login(request, user)
         return redirect('home')  # 회원가입 후 리다이렉트할 페이지
     return render(request, 'accounts/signup.html', {'form': form})
-
-def display_csv(request):
-    file_path = settings.BASE_DIR / 'crawling' / 'CU편의점크롤링.csv'
-    with open(file_path, newline='', encoding='cp949') as csvfile:
-        reader = csv.DictReader(csvfile)
-        data = [row for row in reader]
-    return render(request, 'accounts/display_csv.html', {'data': data})

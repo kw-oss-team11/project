@@ -5,7 +5,6 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('signup/', views.signup_view, name='signup'),
-    path('display-csv/', views.display_csv, name='display_csv'),
     path('chat/', include('chat.urls')),
     path('post/',include('post.urls')),
 ]

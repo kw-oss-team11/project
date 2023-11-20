@@ -10,47 +10,50 @@
 
 - Project Wrap-up Report: [최종보고서.pdf](여기에 업로드 후 주소 넣기)
 
+## 🏪 편의점 구매대행 😊
 
-## 👀 너의 알약이 보여 💊
+**구매** **대**량으로 같이 해서 **행**복해요
 
-- Metric Learning을 활용한 Reverse Pill Image Search
-- streamlit 실행 예시
-
-![프로젝트 시연.gif](링크는 지워두기)
+프로젝트 시연.gif(완성 후에 추가)
 
 ### 😎 Members
 
+**광운대학교**
 | [이동호](https://github.com/malchaa) | [이준석](https://github.com/hansanlee1208) | [장기현](https://github.com/Janggihyeon) | [최진우](https://github.com/wlsgudy3) | [황정묵](https://github.com/hwangjello) |
 | --- | --- | --- | --- | --- |
-| ![이동호](얼굴사진 링크인데) | ![이준석](필요없을듯?) | ![장기현](이하생략) | ![최진우](깔쌈하게넣기?) | ![황정묵](고민) |
+| 소프트웨어학부 | 2019603016 | 소프트웨어학부 | 소프트웨어학부 | 2019603016 |
 
 ### 🤗 Contribution
 
-- 이동호: FastAPI, BentoML, streamlit, GCP, OCR, Text Recognition
-- 이준석: FastAPI, streamlit, OCR, Text Recognition
-- 장기현: Data EDA, Data Pre-processing, Image Classification, Custom Dataset Production
-- 최진우: Metric learning, Segmentation, Database, Docker
-- 황정묵: Data EDA, Data Pre-processing, Data Annotation, OCR, Text Recognition
+- 이동호: 크롤링
+- 이준석: 채팅
+- 장기현: 지도
+- 최진우: 게시물
+- 황정묵: 챗봇
 
 ## **❓ About This Project**
 
 ### Purpose
 
-- 구매 대량으로 해서 함께 행복해져용
+- 편의점 1+1, 2+1 상품들을 공동 구매하여 원하는 양만, 싸게 살 수 있게 한다.
 
 ### Objective
 
-- 사용자의 **알약 이미지**로부터 **성상, 제형, 색상**을 식별 후 조건에 맞는 알약을 검색하여 알약의 **종류**를 식별한다.
+- 공동 구매를 원하는 사람을 모집할 수 있는 웹페이지
+- 모집한 공동 구매원 간의 채팅 기능
+- 지도 API를 이용하여 근처 편의점을 확인하는 기능
+- 크롤링을 이용하여 편의점 브랜드별 행사정보를 모아보는 기능
+- 구매 물품을 추천해주는 챗봇 기능
 
 ### Target Audience
 
-- 지리적, 물리적 한계로 약국이나 병원을 방문하기 어려운 사람
-- 알약은 있지만 알약을 구분할 수 없는 사람
+- 1+1, 2+1 제품을 구매했을 때, 쉽게 소비하기 어려운 사람, 대학교 자취생
+- 가격에 대한 부담으로 더 싸게 구매하고 싶은 사람
 
 ### Background Information
 
-- 종종 일어나는 처방 실수, 및 착각으로 인한 약물사고를 예방하고자 하였다.
-- 실제 보건 계열 종사자에 따르면 노년 층의 경우 어떤 알약인지 병원에 방문하여 알약을 찾는 경우가 존재한다고 하며, 한국의 통계를 보았을 때도 약물 오복용에 의한 사고는 줄지 않고 계속 유지되고 있는 추세이다.
+- 1인 가구의 수는 점점 증가하고 있다.
+- 물가의 상승으로 식비에 대한 부담이 커져가고 있다. 행사 상품 구매로 부담을 줄일 수 있다.
 
 ## 🗺 Service Architecture
 
@@ -58,71 +61,86 @@
 
 ## 💾 Datasets
 
-- 의약품 안전나라 데이터 ([Link](링크는 지워두기)
-- ePillID Benchmark ([Link](링크는 지워두기)
-- 기타 이미지 데이터 ([Link](링크는 지워두기)
-    - Classification 및 Object Detection을 위해 직접 촬영 및 수집한, 라이센스가 없는 이미지들
+크롤링에 사용한 페이지
+
+- CU 편의점 ([Link](https://cu.bgfretail.com/event/plus.do?category=event&depth2=1&sf=N))
+- GS25 편의점 ([Link](http://gs25.gsretail.com/gscvs/ko/products/event-goods))
+- 세븐일레븐 편의점 ([Link](https://www.7-eleven.co.kr/product/presentList.asp))
 
 ## 💻 **Development Environment**
 
-- GPU: Tesla V100
-- OS: Ubuntu 18.04.5LTS
-- CPU: Intel Xeon
-- Python : 3.8.5 / 3.9.13
+- window 환경
+- Python (버전은 모르겠음)
 
 ## 📁 Project Structure (Main branch)
+
+(다 완성한 후에 수정)
 
 ```markdown
 final-project-level3-cv-16
 ├─ api_folder
-│   ├─ .streamlit
-|   |   └─ config.toml
-│   ├─ backend
-|   |   ├─ epillid_benchmark(cloned from Link)
-|   |   ├─ Dockerfile
-|   |   ├─ Backend.py
-|   |   └─ requirements.txt
-│   ├─ frontend
-|   |   ├─ Dockerfile
-|   |   ├─ frontend.py
-|   |   └─ requirements.txt
-│   └─ Docker
-|       └─ docker-compose.yml  
+│ ├─ .streamlit
+| | └─ config.toml
+│ ├─ backend
+| | ├─ epillid_benchmark(cloned from Link)
+| | ├─ Dockerfile
+| | ├─ Backend.py
+| | └─ requirements.txt
+│ ├─ frontend
+| | ├─ Dockerfile
+| | ├─ frontend.py
+| | └─ requirements.txt
+│ └─ Docker
+| └─ docker-compose.yml  
 └─ image_classification
-    ├─ data_preprocessing
-    |   ├─ download_pill_data.py 
-    |   └─ normalize_pill_data.py
-    ├─ image_concatenation
-    |   └─ concatenation_images.py
-    ├─ kaggle_pill_data_preprocessing
-    |   ├─ 1_annotation_file_name_to_txt.py
-    |   ├─ 2_edit_xml_path.py
-    |   └─ 3_xml_to_json.py
-    ├─ pill_excel_data
-    |   └─ README.md
-    ├─ .gitignore
-    ├─ data.py
-    ├─ dataset.py
-    ├─ log.py
-    └─ train.py
+├─ data_preprocessing
+| ├─ download_pill_data.py
+| └─ normalize_pill_data.py
+├─ image_concatenation
+| └─ concatenation_images.py
+├─ kaggle_pill_data_preprocessing
+| ├─ 1_annotation_file_name_to_txt.py
+| ├─ 2_edit_xml_path.py
+| └─ 3_xml_to_json.py
+├─ pill_excel_data
+| └─ README.md
+├─ .gitignore
+├─ data.py
+├─ dataset.py
+├─ log.py
+└─ train.py
 ```
 
 ## ✏️ Evaluation
+
+평가도 일단 다 완성하고 작성
 
 - Top-1 accuracy: 43%
 - Top-5 accuracy: 80%
 
 ## 🚀 How to Start
 
-1. Image Classification: [Link](링크는 지워두기)
-    
-2. OCR: [Link](링크는 지워두기)
-    
-3. Object Detection (yolov5): [Link](링크는 지워두기)
+1. python 환경 설치
 
-4. Metric learning: [Link](링크는 지워두기)
+2. 실행에 필요한 모듈 설치
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. project/crawling 폴더에 있는 crwaling.py 실행
+   ```python
+   python crwaling.py
+   ```
+4. 다시 project 폴더로 돌아가서 서버 실행
+   ```
+   python manage.py runserver
+   ```
+5. 서버를 실행했을 때 나오는 주소로 이동하면 로컬 환경에서 실행해볼 수 있다. [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## 🔎 Future Research
+
+이것도 완성하고 따져봅시다
 
 - 모델의 정확도 향상 및 inference time 단축
 - Mobile Application 제작
@@ -137,4 +155,3 @@ final-project-level3-cv-16
 
 - ePillID Dataset: A Low-Shot Fine-Grained Benchmark for Pill Identification ([Link]링크는 지워두기)
 - YOLACT: Real-time Instance Segmentation ([Link]링크는 지워두기)
-

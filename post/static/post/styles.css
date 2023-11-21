@@ -22,10 +22,23 @@ li {
   margin: 10px 0;
   padding: 15px;
   border-radius: 5px;
+  max-width: 1000px; /* 최대 너비 설정 */
+  width: 100%; /* 정확한 너비 조절 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
 }
 
 a {
-  color: #007bff;
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px 0 15px 0;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a:hover {
+  background-color: #0056b3;
 }
 
 form {

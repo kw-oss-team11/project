@@ -1,4 +1,4 @@
-<!-- your_app/templates/your_app/post_list.html -->
+<!-- post/templates/post_list.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -10,14 +10,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'post/styles.css' %}" />
   </head>
   <body>
-    <div class="container">
+    <div>
       <h1>게시물 목록</h1>
+      <h2>로그인한 사용자: {{ request.user.username }}</h2>
       <ul>
         {% for post in posts %}
-        <li class="post">
+        <li>
           <h2>{{ post.title }}</h2>
           <p>원하는 상품: {{ post.item }}</p>
           <p>내용: {{ post.content }}</p>
+          <p>작성자: {{ post.author }}</p>
+          <a href="{% url 'post_detail' pk=post.pk %}">상세 보기</a>
+          <a href="{% url 'delete_post' pk=post.pk %}">삭제</a>
+          {% if post.author %}
+          <a href="{% url 'chat:room' room_name=post.author|urlencode %}" class="chat-button">채팅방으로 가기</a>
+          {% endif %}
         </li>
         {% endfor %}
       </ul>

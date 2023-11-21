@@ -128,6 +128,9 @@ final-project-level3-cv-16
    pip install -r requirements.txt
    ```
 
+   2.1 chatting을 위해서는 docker를 설치해야한다.
+   [docker 설치](https://www.docker.com/get-started/)
+
 3. project/crawling 폴더에 있는 crwaling.py 실행
    ```python
    python crwaling.py

@@ -123,13 +123,34 @@ final-project-level3-cv-16
 1. python 환경 설치
 
 2. 실행에 필요한 모듈 설치
-
+   
    ```
    pip install -r requirements.txt
    ```
+   *관리자 권한으로 실행해서 설치하는 것을 권장합니다.
 
    2.1 chatting을 위해서는 docker를 설치해야한다.
    [docker 설치](https://www.docker.com/get-started/)
+   설치한 후에 쉘을 다시 실행하고, 아래 명령으로 설치 확인
+
+   ```
+   docker -v
+   ```
+
+   2.2 docker 실행
+
+   ```
+   docker run -p 6379:6379 -d redis:5
+   ```
+
+   참고 : 아래 명령은 순서대로 실행중인 컨테이너 확인, 중지, 중지된 컨테이너 확인, 삭제이다
+   
+   ```
+   docker ps
+   docker stop [컨테이너 이름 또는 ID]
+   docker ps -a
+   docker rm [컨테이너 이름 또는 ID]
+   ```
 
 3. project/crawling 폴더에 있는 crwaling.py 실행
    ```python

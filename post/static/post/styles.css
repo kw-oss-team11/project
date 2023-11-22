@@ -1,0 +1,84 @@
+/* static/css/style.css */
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 화면 전체 높이만큼 설정하여 가운데 정렬 */
+}
+
+.container {
+  max-width: 1000px; /* 최대 너비 설정 */
+  width: 80%; /* 정확한 너비 조절 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
+  margin-top: 50px;
+}
+
+h1 {
+  color: #343a40;
+  text-align: center;
+}
+
+h2 {
+  text-align:left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px 0 15px 0;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -7,6 +7,6 @@ class Post(models.Model):
     item = models.CharField(max_length=100)
     content = models.TextField()
     author = models.CharField(max_length=100, default='Anonymous')
-
+    likes = models.IntegerField(default=0)
     def __str__(self):
         return self.title

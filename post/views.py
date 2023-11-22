@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Post
 from .forms import PostForm
+from django.http import JsonResponse
 
 @login_required(login_url='/accounts/login/')
 def post_list(request):
@@ -33,3 +34,12 @@ def delete_post(request, pk):
     if request.user.username == post.author:
         post.delete()
     return redirect('post_list')
+
+def increase_likes(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    # 좋아요 숫자 증가
+    post.likes += 1
+    post.save()
+
+    return JsonResponse({'likes': post.likes})

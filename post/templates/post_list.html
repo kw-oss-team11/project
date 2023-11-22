@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'post/styles.css' %}" />
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>게시물 목록</h1>
       <h2>로그인한 사용자: {{ request.user.username }}</h2>
       <ul>
@@ -20,10 +20,8 @@
           <p>원하는 상품: {{ post.item }}</p>
           <p>내용: {{ post.content }}</p>
           <p>작성자: {{ post.author }}</p>
-          <a href="{% url 'post_detail' pk=post.pk %}">상세 보기</a>
           <a href="{% url 'delete_post' pk=post.pk %}">삭제</a>
           {% if post.author %}
-          <a href="{% url 'chat:room' room_name=post.author|urlencode %}" class="chat-button">채팅방으로 가기</a>
           {% endif %}
         </li>
         {% endfor %}

@@ -5,10 +5,26 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 화면 전체 높이만큼 설정하여 가운데 정렬 */
+}
+
+.container {
+  max-width: 1000px; /* 최대 너비 설정 */
+  width: 80%; /* 정확한 너비 조절 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
+  margin-top: 50px;
 }
 
 h1 {
   color: #343a40;
+  text-align: center;
+}
+
+h2 {
+  text-align:left;
 }
 
 ul {
@@ -22,9 +38,6 @@ li {
   margin: 10px 0;
   padding: 15px;
   border-radius: 5px;
-  max-width: 1000px; /* 최대 너비 설정 */
-  width: 100%; /* 정확한 너비 조절 */
-  box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
 }
 
 a {

@@ -152,12 +152,22 @@ final-project-level3-cv-16
    docker rm [컨테이너 이름 또는 ID]
    ```
 
-3. project/crawling 폴더에 있는 crwaling.py 실행
+3. crawling 폴더로 이동해 크롤링을 실시한다.
    ```python
-   python crwaling.py
+   cd ./crawling # 크롤링 폴더로 이동
+   python crawling_CU.py
+   python crawling_GS.py
+   python crawling_SE.py
+   ```
+   위와 같이 실행한다면 CSV파일이 생성된다. 이를 토대로 이미지를 다운받는다.
+   ```python
+   python CU_Images.py
+   python GS_Images.py
+   python SE_Images.py
    ```
 4. 다시 project 폴더로 돌아가서 서버 실행
    ```
+   cd .. # project 폴더로 이동
    python manage.py runserver
    ```
 5. 서버를 실행했을 때 나오는 주소로 이동하면 로컬 환경에서 실행해볼 수 있다. [http://127.0.0.1:8000/](http://127.0.0.1:8000/)

@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 # chrome_options.add_argument("--headless")  # 서버에서 실행 시 사용하기
 
-
+# 정보 담을 리스트
 product_depth = []
 product_names = []
 product_prices = []
@@ -25,7 +25,7 @@ driver = webdriver.Chrome(service=s, options=chrome_options)
 
 
 
-#CU 편의점 url
+#GS 편의점 url
 URL="http://gs25.gsretail.com/gscvs/ko/products/event-goods"
 driver.get(URL)#웹페이지 열기 
 time.sleep(1)#대기
@@ -34,25 +34,23 @@ Depth={
     'TWO_TO_ONE':'2+1',
 }
 
-# [code2]메인 카테고리 분류 
+# 카테고리 이동 함수
 def goDepth(depth):
     script="" #초기화
     if depth =='ONE_TO_ONE': #1+1
         element = driver.find_element(By.ID, "ONE_TO_ONE")
-        # 요소를 클릭합니다.
+        # 요소 클릭
         element.click()
     elif depth == 'TWO_TO_ONE': #즉석조리
         element = driver.find_element(By.ID, "TWO_TO_ONE")
-        # 요소를 클릭합니다.
         element.click()
     else:
         element = driver.find_element(By.ID, "TOTAL")
-        # 요소를 클릭합니다.
         element.click()
 
     driver.execute_script(script) #스크립트 실행
     time.sleep(2)
-    # [code 4] 더보기 클릭
+# 더보기 클릭(더 이상 없을때까지)
 def clickMore(page_number):
     try:
         driver.execute_script(f"goodsPageController.movePage({page_number});")
@@ -62,24 +60,30 @@ def clickMore(page_number):
         # [code 5] 상품 정보 가져오기
 def getProductInfo(soup,depth):
     #soup :html parser
-    # list 추출
+    # div 추출
     tblwrap_div = soup.find('div', class_='tblwrap mt50')
     # list 만큼 반복
     if tblwrap_div:
+        # ul 추출
         prod_list_ul = tblwrap_div.find('ul', class_='prod_list')
         if prod_list_ul:
+            # li 추출
             li_elements = prod_list_ul.find_all('li')
-            for li in li_elements:
+            for li in li_elements: # li 만큼 반복
+                # div 추출
                 prod_box_div = li.find('div', class_='prod_box')
                 if prod_box_div:
+                    # 이름 찾기
                     name_element = prod_box_div.find('p', class_='tit')
                     if name_element:
                         product_name = name_element.text.strip()
                         product_names.append(product_name)
+                    # 가격 찾기
                     price_element = prod_box_div.find('span', class_='cost')
                     if price_element:
                         product_price = price_element.text.strip()
                         product_prices.append(product_price)
+                    # URL과 ALT 찾기
                     src_element = prod_box_div.find('p', class_='img')
                     if src_element:
                         img = src_element.find('img')
@@ -99,15 +103,17 @@ def getProductInfo(soup,depth):
                     time.sleep(0.3)
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
-goDepth('ONE_TO_ONE')
+goDepth('ONE_TO_ONE') # 1+1
 soup = BeautifulSoup(driver.page_source, 'html.parser')
+# 반복의 끝을 찾아라
 last_page_number = int(soup.select_one('a.next2')['onclick'].split('(')[1].split(')')[0])
 for page in range(1, last_page_number + 1):
     clickMore(page)
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     getProductInfo(soup, 'ONE_TO_ONE')
-goDepth('TWO_TO_ONE')
+goDepth('TWO_TO_ONE') # 2 + 1
 soup = BeautifulSoup(driver.page_source, 'html.parser')
+# 반복의 끝을 찾아라
 last_page_number = int(soup.select_one('a.next2')['onclick'].split('(')[1].split(')')[0])
 for page in range(1, last_page_number + 1):
     clickMore(page)
@@ -123,12 +129,12 @@ df = pd.DataFrame({
     "ALT":product_alts,
 })
 
-# [코드 6] 여기서 데이터 프레임 수정 및 CSV 파일로 다시 저장
+# 가격 , 제거, 원 제거, int 형식으로 처리
 df['가격'] = df['가격'].str.replace(',', '')  # 콤마(,) 제거
 df['가격'] = df['가격'].str.replace('원', '')  # 단위(원) 제거
 df['가격'] = df['가격'].astype(int)  # int 형식으로 변환
 
-# 데이터 프레임 출력
+# 데이터 프레임 저장
 df.to_csv('./GS편의점크롤링.csv', index=False, encoding='cp949', mode='w')
 
 # 드라이버 종료

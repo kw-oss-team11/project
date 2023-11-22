@@ -13,6 +13,7 @@
     <div class="container">
       <h1>게시물 목록</h1>
       <h2>로그인한 사용자: {{ request.user.username }}</h2>
+      <a href="{% url 'home' %}"><button>Home</button></a>
       <ul>
         {% for post in posts %}
         <div class="post-item">

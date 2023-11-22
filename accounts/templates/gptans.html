@@ -60,6 +60,7 @@
 </head>
 <body>
     <div id="chat-container">
+        <a href="{% url 'home' %}"><button>Home</button></a>
         <div id="chat-messages">
             {% for message in conversation_history %}
                 <p class="user-message"><strong>사용자:</strong> {{ message.user }}</p>
@@ -67,12 +68,14 @@
             {% endfor %}
         </div>
         <div id="input-container">
-            <form method="post" action="{% url 'home' %}">
+            <form method="post" action="{% url 'gptans' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" id="submit-btn">질문</button>
             </form>
         </div>
+        
     </div>
+    
 </body>
 </html>

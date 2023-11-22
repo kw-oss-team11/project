@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts', #회원가입 등록
+    'accounts',
     'post.apps.PostConfig',
 ]
 

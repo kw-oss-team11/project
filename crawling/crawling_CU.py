@@ -12,6 +12,7 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 # chrome_options.add_argument("--headless")  # 필요한 추가 옵션
 
+# 정보 담을 리스트
 product_depth = []
 product_names = []
 product_prices = []
@@ -83,10 +84,9 @@ def getProductInfo(soup,depth):
                 product_alt_cleaned = re.sub(r'[\\/:*?"<>|]', '', product_alt)
                 product_alts.append(product_alt_cleaned)
 
-        #메인,서브 카테고리 담기
         product_depth.append(Depth[depth])
         time.sleep(0.3)
-#4. 데이터 프레임 생성
+
 # [함수 호출 및 실행 로직]
 goDepth('23')  # 1+1 카테고리로 이동
 clickMore1()  # 현재 카테고리에서 모든 페이지를 로드
@@ -108,11 +108,11 @@ df = pd.DataFrame({
     "ALT":product_alts,
 })
 
-# [코드 6] 여기서 데이터 프레임 수정 및 CSV 파일로 다시 저장
+# 가격은 , 제거하고 int 형식으로 처리
 df['가격'] = df['가격'].str.replace(',', '')  # 콤마(,) 제거
 df['가격'] = df['가격'].astype(int)  # int 형식으로 변환
 
-# 데이터 프레임 출력
+# 데이터 프레임 저장
 df.to_csv('./CU편의점크롤링.csv', index=False, encoding='cp949', mode='w')
 
 # 드라이버 종료

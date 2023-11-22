@@ -15,7 +15,8 @@
         }
         img {
             width: 100%; /* This will make all images the same size */
-            height: auto;
+            height: 200px; /* 이미지 높이를 고정값으로 설정 */
+            object-fit: contain; /* 이미지가 정사각형 내부에 축소되어 보이도록 설정 */
         }
         .category, .price {
             margin: 5px 0;
@@ -24,6 +25,7 @@
 </head>
 <body>
     <h1>Welcome to SEVEN!</h1> <!-- Replace with SEVEN if needed -->
+    <a href="{% url 'home' %}"><button>Home</button></a>
     <div class="container">
         {% load static %}
         {% for item in data %}

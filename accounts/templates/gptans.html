@@ -1,0 +1,78 @@
+<!-- myapp/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챗봇</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #chat-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #input-container {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        #input {
+            flex: 1;
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        #submit-btn {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .user-message {
+            /* 사용자 메시지에 대한 스타일 */
+            color: #000;
+        }
+
+        .system-message {
+            /* 시스템 메시지에 대한 스타일 */
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages">
+            {% for message in conversation_history %}
+                <p class="user-message"><strong>사용자:</strong> {{ message.user }}</p>
+                <p class="system-message"><strong>편돌이:</strong> {{ message.chatbot }}</p>
+            {% endfor %}
+        </div>
+        <div id="input-container">
+            <form method="post" action="{% url 'home' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" id="submit-btn">질문</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- your_app/templates/your_app/add_post.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새 게시물 추가</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'post/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>새 게시물 추가</h1>
+      <form method="post" action="{% url 'add_post' %}">
+        {% csrf_token %}
+        <div class="post">
+          {{ form.as_p }}
+          <button type="submit">추가</button>
+        </div>
+      </form>
+      <a class="add-post-link" href="{% url 'post_list' %}">게시물 목록으로 돌아가기</a>
+    </div>
+  </body>
+</html>

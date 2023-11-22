@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Rooms</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <!-- 스타일과 기타 헤드 요소 -->
+</head>
+<body>
+
+<h1>Available Chat Rooms</h1>
+
+<!-- 채팅방 목록 표시 -->
+<ul>
+    {% for room in chat_rooms %}
+    <li>
+        {{ room.name }}
+        <!-- 해당 채팅방으로 이동하는 버튼 -->
+        <a href="{% url 'chat:room' room.name %}"><button>Join</button></a>
+    </li>
+    {% empty %}
+    <li>No rooms available.</li>
+    {% endfor %}
+</ul>
+
+<!-- 채팅방 생성 페이지로 이동하는 버튼 -->
+<a href="{% url 'chat:index' %}"><button>Create New Room</button></a>
+
+</body>
+</html>
+

@@ -44,9 +44,33 @@
 
 - 편의점 1+1, 2+1 상품들을 공동 구매하여 원하는 양만, 값싸게 살 수 있도록 한다.
 
-## 🗺 Service Architecture
+## 🗺 Service Example
 
-![Service Architecture]((https://github.com/kw-oss-team11/project/blob/main/readmesrc/click.PNG))
+- 로그인 화면
+![login](https://github.com/kw-oss-team11/project/blob/main/readmesrc/login.PNG)
+- 회원가입 화면
+![signup](https://github.com/kw-oss-team11/project/blob/main/readmesrc/signup.PNG)
+- 홈 화면
+![home](https://github.com/kw-oss-team11/project/blob/main/readmesrc/home.PNG)
+- 편의점 클릭 시
+![click](https://github.com/kw-oss-team11/project/blob/main/readmesrc/click.PNG)
+- 행사 물품 목록 확인 (예시 CU)
+![cu](https://github.com/kw-oss-team11/project/blob/main/readmesrc/cu.PNG)
+- 챗봇 시스템
+![gptans_1](https://github.com/kw-oss-team11/project/blob/main/readmesrc/gptans_1.PNG)
+![gptans_2](https://github.com/kw-oss-team11/project/blob/main/readmesrc/gptans_2.PNG)
+- 포스트 기능
+![post_list](https://github.com/kw-oss-team11/project/blob/main/readmesrc/post_list.PNG)
+![post_add](https://github.com/kw-oss-team11/project/blob/main/readmesrc/post_add.PNG)
+- 회원 이름으로 QR 생성
+![qrcode](https://github.com/kw-oss-team11/project/blob/main/readmesrc/qrcode.PNG)
+- 사용자 간 채팅
+![room_list](https://github.com/kw-oss-team11/project/blob/main/readmesrc/room_list.PNG)
+![room_create](https://github.com/kw-oss-team11/project/blob/main/readmesrc/room_create.PNG)
+![room](https://github.com/kw-oss-team11/project/blob/main/readmesrc/room.PNG)
+
+
+
 
 ## 💾 Datasets
 

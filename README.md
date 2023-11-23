@@ -74,8 +74,8 @@
 (다 완성한 후에 수정)
 
 ```markdown
-final-project-level3-cv-16
-├─ api_folder
+project-main
+├─ accounts
 │ ├─ .streamlit
 | | └─ config.toml
 │ ├─ backend
@@ -90,22 +90,23 @@ final-project-level3-cv-16
 │ └─ Docker
 | └─ docker-compose.yml  
 └─ image_classification
-├─ data_preprocessing
+├─ chat
 | ├─ download_pill_data.py
 | └─ normalize_pill_data.py
 ├─ image_concatenation
 | └─ concatenation_images.py
-├─ kaggle_pill_data_preprocessing
+├─ crawling
 | ├─ 1_annotation_file_name_to_txt.py
 | ├─ 2_edit_xml_path.py
 | └─ 3_xml_to_json.py
-├─ pill_excel_data
+├─ picture
 | └─ README.md
-├─ .gitignore
-├─ data.py
-├─ dataset.py
-├─ log.py
-└─ train.py
+├─ post
+├─ project
+├─ README.md
+├─ db.sqlite3
+├─ manage.py
+└─ requirements.txt
 ```
 
 ## 🚀 How to Start

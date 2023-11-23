@@ -6,7 +6,7 @@
 
 - Project Period: 2023.10.20 ~ 2023.11.23
 
-- Project Wrap-up Report: [최종보고서.pdf](여기에 업로드 후 주소 넣기)
+- Project Wrap-up Report: [OSS_TEAM11_REPORT.pdf](https://github.com/kw-oss-team11/project/blob/main/readmesrc/OSS_TEAM11_REPORT.pdf)
 
 ## 🏪 편의점 구매대행 😊
 
@@ -14,7 +14,6 @@
 
 ### 😎 Members
 
-**광운대학교**
 | [이동호](https://github.com/malchaa) | [이준석](https://github.com/hansanlee1208) | [장기현](https://github.com/Janggihyeon) | [최진우](https://github.com/wlsgudy3) | [황정묵](https://github.com/hwangjello) |
 | --- | --- | --- | --- | --- |
 | 소프트웨어학부 | 수학과 | 소프트웨어학부 | 소프트웨어학부 | 수학과 |
@@ -28,6 +27,7 @@
 - 황정묵: 챗봇 시스템
 
 ## **❓ About Function of This Project**
+
 - 로그인 및 회원가입 기능
 - 주변 편의점 확인
 - 행사 물품 목록 확인
@@ -82,8 +82,6 @@
 - Python 3.10.9
 
 ## 📁 Project Structure (Main branch)
-
-(다 완성한 후에 수정)
 
 ```markdown
 project-main
@@ -169,6 +167,8 @@ project-main
 | ├─ urls.py
 | ├─ views.py
 | └─ wsgi.py
+├─ readmesrc/
+├─ .gitignore
 ├─ README.md
 ├─ db.sqlite3
 ├─ manage.py

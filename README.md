@@ -6,15 +6,11 @@
 
 - Project Period: 2023.10.20 ~ 2023.11.23
 
-- Project Presentation File: [최종발표자료.pdf](여기에 업로드 후 주소 넣기)
-
 - Project Wrap-up Report: [최종보고서.pdf](여기에 업로드 후 주소 넣기)
 
 ## 🏪 편의점 구매대행 😊
 
 **구매** **대**량으로 같이 해서 **행**복해요
-
-프로젝트 시연.gif(완성 후에 추가)
 
 ### 😎 Members
 

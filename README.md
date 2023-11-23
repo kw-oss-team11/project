@@ -165,18 +165,18 @@ project-main
 
 ## 🔎 Future Research
 
-이것도 완성하고 따져봅시다
-
-- 모델의 정확도 향상 및 inference time 단축
-- Mobile Application 제작
-- 실용성 향상
-- OCR 적용
-
-## 📎 Appendix
-
-📄 [Experiments & Submission Report](링크는 지워두기)
+- 프로젝트 전체 디자인 개선, 배포
+- [로그인 및 회원가입] 비밀번호 찾기 기능
+- [주변 편의점 확인] 반경 넓히기, 더 많은 편의점 추가
+- [행사 물품 목록 확인] 상품 클릭 시 정보 출력, 크롤링 주기적 실행 등의 자동화
+- [챗봇 시스템] 자연어 처리를 활용한 챗봇 생성
+- [포스트 기능] 좋아요 순 정렬 기능, 댓글 기능
+- [사용자 간 채팅] 방 생성 시 물품 이름 등의 정보 도입
 
 ## 📜 Reference
 
-- ePillID Dataset: A Low-Shot Fine-Grained Benchmark for Pill Identification ([Link]링크는 지워두기)
-- YOLACT: Real-time Instance Segmentation ([Link]링크는 지워두기)
+- 로그인 및 회원가입, 포스트 기능 ([Link](https://docs.djangoproject.com/ko/4.2/))
+- 행사 물품 목록 확인 ([Link](https://dudumandu0321.tistory.com/46))
+- 사용자 간 채팅 ([Link](https://channels.readthedocs.io/en/latest/index.html))
+- 챗봇 시스템 ([Link](https://needjarvis.tistory.com/639))
+-            ([Link](https://hashdork.com/ko/create-a-deep-learning-chatbot-with-python/))  

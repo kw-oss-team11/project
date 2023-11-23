@@ -75,6 +75,9 @@
 - CU 편의점 ([Link](https://cu.bgfretail.com/event/plus.do?category=event&depth2=1&sf=N))
 - GS25 편의점 ([Link](http://gs25.gsretail.com/gscvs/ko/products/event-goods))
 - 세븐일레븐 편의점 ([Link](https://www.7-eleven.co.kr/product/presentList.asp))
+- CU편의점크롤링 CSV파일 ([Link](https://github.com/kw-oss-team11/project/blob/main/crawling/CU%ED%8E%B8%EC%9D%98%EC%A0%90%ED%81%AC%EB%A1%A4%EB%A7%81.csv))
+- GS편의점크롤링 CSV파일 ([Link](https://github.com/kw-oss-team11/project/blob/main/crawling/GS%ED%8E%B8%EC%9D%98%EC%A0%90%ED%81%AC%EB%A1%A4%EB%A7%81.csv))
+- SE편의점크롤링 CSV파일 ([Link](https://github.com/kw-oss-team11/project/blob/main/crawling/SE%ED%8E%B8%EC%9D%98%EC%A0%90%ED%81%AC%EB%A1%A4%EB%A7%81.csv))
 
 ## 💻 **Development Environment**
 
@@ -177,9 +180,16 @@ project-main
 
 ## 🚀 How to Start
 
-1. python 환경 설치
+1. GOOGLE MAP API KEY를 발급받아 project/accounts/templates/home.html에 <your_api_key>에 추가해준다.
+   ```
+   <script async defer
+            src="https://maps.googleapis.com/maps/api/<your_api_key>">
+    </script>
+   ```
 
-2. 실행에 필요한 모듈 설치
+2. python 환경 설치
+
+3. 실행에 필요한 모듈 설치
    
    ```
    pip install -r requirements.txt
@@ -209,7 +219,7 @@ project-main
    docker rm [컨테이너 이름 또는 ID]
    ```
 
-3. crawling 폴더로 이동해 크롤링을 실시한다.
+4. crawling 폴더로 이동해 크롤링을 실시한다.
    ```python
    cd ./crawling # 크롤링 폴더로 이동
    python crawling_CU.py
@@ -222,12 +232,12 @@ project-main
    python GS_Images.py
    python SE_Images.py
    ```
-4. 다시 project 폴더로 돌아가서 서버 실행
+5. 다시 project 폴더로 돌아가서 서버 실행
    ```
    cd .. # project 폴더로 이동
    python manage.py runserver
    ```
-5. 서버를 실행했을 때 나오는 주소로 이동하면 로컬 환경에서 실행해볼 수 있다. [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+6. 서버를 실행했을 때 나오는 주소로 이동하면 로컬 환경에서 실행해볼 수 있다. [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## 🔎 Future Research
 

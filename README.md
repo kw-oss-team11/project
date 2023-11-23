@@ -244,5 +244,4 @@ project-main
 - 로그인 및 회원가입, 포스트 기능 ([Link](https://docs.djangoproject.com/ko/4.2/))
 - 행사 물품 목록 확인 ([Link](https://dudumandu0321.tistory.com/46))
 - 사용자 간 채팅 ([Link](https://channels.readthedocs.io/en/latest/index.html))
-- 챗봇 시스템 ([Link](https://needjarvis.tistory.com/639))
--            ([Link](https://hashdork.com/ko/create-a-deep-learning-chatbot-with-python/))  
+- 챗봇 시스템 ([Link1](https://needjarvis.tistory.com/639)) ([Link2](https://hashdork.com/ko/create-a-deep-learning-chatbot-with-python/))  

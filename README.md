@@ -172,6 +172,7 @@ project-main
 | └─ wsgi.py
 ├─ readmesrc/
 ├─ .gitignore
+├─ LICENSE
 ├─ README.md
 ├─ db.sqlite3
 ├─ manage.py

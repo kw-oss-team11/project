@@ -31,7 +31,7 @@
 - 최진우: 포스트 기능
 - 황정묵: 챗봇 시스템
 
-## **❓ About This Project**
+## **❓ About Function of This Project**
 - 로그인 및 회원가입 기능
 - 주변 편의점 확인
 - 행사 물품 목록 확인
@@ -43,14 +43,6 @@
 ### Purpose
 
 - 편의점 1+1, 2+1 상품들을 공동 구매하여 원하는 양만, 값싸게 살 수 있도록 한다.
-
-### Objective
-
-- 공동 구매를 원하는 사람을 모집할 수 있는 웹페이지
-- 모집한 공동 구매원 간의 채팅 기능
-- 지도 API를 이용하여 근처 편의점을 확인하는 기능
-- 크롤링을 이용하여 편의점 브랜드별 행사정보를 모아보는 기능
-- 구매 물품을 추천해주는 챗봇 기능
 
 ## 🗺 Service Architecture
 
@@ -76,33 +68,87 @@
 ```markdown
 project-main
 ├─ accounts
-│ ├─ .streamlit
-| | └─ config.toml
-│ ├─ backend
-| | ├─ epillid_benchmark(cloned from Link)
-| | ├─ Dockerfile
-| | ├─ Backend.py
-| | └─ requirements.txt
-│ ├─ frontend
-| | ├─ Dockerfile
-| | ├─ frontend.py
-| | └─ requirements.txt
-│ └─ Docker
-| └─ docker-compose.yml  
-└─ image_classification
+| ├─ migrations
+| | └─ __init__.py
+| ├─ templates
+| | ├─ accounts
+| | | ├─ login.html
+| | | └─ signup.html
+| | ├─ cu.html
+| | ├─ gptans.html
+| | ├─ gs25.html
+| | ├─ home.html
+| | └─ seven.html
+| ├─ __init__.py
+| ├─ admin.py
+| ├─ apps.py
+| ├─ models.py
+| ├─ tests.py
+| ├─ urls.py
+| └─ views.py
 ├─ chat
-| ├─ download_pill_data.py
-| └─ normalize_pill_data.py
-├─ image_concatenation
-| └─ concatenation_images.py
+| ├─ migrations
+| | ├─ 0001_initial.py
+| | └─ __init__.py
+| ├─ templates/chat
+| | ├─ index.html
+| | ├─ room.html
+| | └─ room_list.html
+| ├─ __init__.py
+| ├─ consumers.py
+| ├─ models.py
+| ├─ routing.py
+| ├─ urls.py
+| └─ views.py
 ├─ crawling
-| ├─ 1_annotation_file_name_to_txt.py
-| ├─ 2_edit_xml_path.py
-| └─ 3_xml_to_json.py
+| ├─ CU_Images.py
+| ├─ CU편의점크롤링.csv
+| ├─ GS_Images.py
+| ├─ GS편의점크롤링.csv
+| ├─ LICENSE.chromedriver
+| ├─ SE_Images.py
+| ├─ SE편의점크롤링.csv
+| ├─ chatbot_rule.xlsx
+| ├─ chromedriver.exe
+| ├─ crawling_CU.py
+| ├─ crawling_GS.py
+| └─ crawling_SE.py
 ├─ picture
-| └─ README.md
+| ├─ CU/
+| ├─ GS/
+| ├─ SE/
+| ├─ CU.png
+| ├─ GS25.jpeg
+| └─ SEVEN.jpeg
 ├─ post
+| ├─ migrations
+| | ├─ 0001_initial.py
+| | ├─ 0002_post_author.py
+| | ├─ 0003_post_likes.py
+| | └─ __init__.py
+| ├─ static/post
+| | └─ styles.css
+| ├─ templates
+| | ├─ add_post.html
+| | ├─ post_detail.html
+| | └─ post_list.html
+| ├─ __init__.py
+| ├─ admin.py
+| ├─ apps.py
+| ├─ forms.py
+| ├─ models.py
+| ├─ tests.py
+| ├─ urls.py
+| └─ views.py
 ├─ project
+| ├─ __init__.py
+| ├─ asgi.py
+| ├─ forms.py
+| ├─ models.py
+| ├─ settings.py
+| ├─ urls.py
+| ├─ views.py
+| └─ wsgi.py
 ├─ README.md
 ├─ db.sqlite3
 ├─ manage.py

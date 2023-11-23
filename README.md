@@ -4,7 +4,7 @@
 
 ## 📚 Project Overview
 
-- Project Period: 2023.10.00 ~ 2023.11.00
+- Project Period: 2023.10.20 ~ 2023.11.23
 
 - Project Presentation File: [최종발표자료.pdf](여기에 업로드 후 주소 넣기)
 
@@ -21,21 +21,28 @@
 **광운대학교**
 | [이동호](https://github.com/malchaa) | [이준석](https://github.com/hansanlee1208) | [장기현](https://github.com/Janggihyeon) | [최진우](https://github.com/wlsgudy3) | [황정묵](https://github.com/hwangjello) |
 | --- | --- | --- | --- | --- |
-| 소프트웨어학부 | 2019603016 | 소프트웨어학부 | 소프트웨어학부 | 2019603016 |
+| 소프트웨어학부 | 수학과 | 소프트웨어학부 | 소프트웨어학부 | 수학과 |
 
 ### 🤗 Contribution
 
-- 이동호: 크롤링
-- 이준석: 채팅
-- 장기현: 지도
-- 최진우: 게시물
-- 황정묵: 챗봇
+- 이동호: 로그인 및 회원가입, 행사 물품 목록 확인, 회원 이름으로 QR 생성
+- 이준석: 사용자 간 채팅
+- 장기현: 주변 편의점 확인
+- 최진우: 포스트 기능
+- 황정묵: 챗봇 시스템
 
 ## **❓ About This Project**
-
+- 로그인 및 회원가입 기능
+- 주변 편의점 확인
+- 행사 물품 목록 확인
+- 챗봇 시스템
+- 포스트 기능
+- 회원 이름으로 QR 생성
+- 사용자 간 채팅
+  
 ### Purpose
 
-- 편의점 1+1, 2+1 상품들을 공동 구매하여 원하는 양만, 싸게 살 수 있게 한다.
+- 편의점 1+1, 2+1 상품들을 공동 구매하여 원하는 양만, 값싸게 살 수 있도록 한다.
 
 ### Objective
 
@@ -44,16 +51,6 @@
 - 지도 API를 이용하여 근처 편의점을 확인하는 기능
 - 크롤링을 이용하여 편의점 브랜드별 행사정보를 모아보는 기능
 - 구매 물품을 추천해주는 챗봇 기능
-
-### Target Audience
-
-- 1+1, 2+1 제품을 구매했을 때, 쉽게 소비하기 어려운 사람, 대학교 자취생
-- 가격에 대한 부담으로 더 싸게 구매하고 싶은 사람
-
-### Background Information
-
-- 1인 가구의 수는 점점 증가하고 있다.
-- 물가의 상승으로 식비에 대한 부담이 커져가고 있다. 행사 상품 구매로 부담을 줄일 수 있다.
 
 ## 🗺 Service Architecture
 
@@ -69,8 +66,8 @@
 
 ## 💻 **Development Environment**
 
-- window 환경
-- Python (버전은 모르겠음)
+- windows 10, 11
+- Python 3.10.9
 
 ## 📁 Project Structure (Main branch)
 
@@ -110,13 +107,6 @@ final-project-level3-cv-16
 ├─ log.py
 └─ train.py
 ```
-
-## ✏️ Evaluation
-
-평가도 일단 다 완성하고 작성
-
-- Top-1 accuracy: 43%
-- Top-5 accuracy: 80%
 
 ## 🚀 How to Start
 

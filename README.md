@@ -46,7 +46,7 @@
 
 ## 🗺 Service Architecture
 
-![Service Architecture](링크는 지워두기)
+![Service Architecture]((https://github.com/kw-oss-team11/project/blob/main/readmesrc/click.PNG))
 
 ## 💾 Datasets
 
